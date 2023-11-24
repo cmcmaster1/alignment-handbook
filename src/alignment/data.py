@@ -77,6 +77,9 @@ def apply_chat_template(
             raise ValueError(
                 f"Could not format example as dialogue for `dpo` task! Require `[chosen, rejected]` keys but found {list(example.keys())}"
             )
+    elif task == "pretrain":
+        # In pretraining we do not need to format the data as dialogue
+        pass
     else:
         raise ValueError(
             f"Task {task} not supported, please ensure that the provided task is one of {['sft', 'generation', 'rm', 'dpo']}"

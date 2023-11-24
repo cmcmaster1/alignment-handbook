@@ -95,7 +95,7 @@ def main():
     #####################
     # Apply chat template
     #####################
-    raw_datasets = raw_datasets.map(apply_chat_template, fn_kwargs={"tokenizer": tokenizer, "task": "sft"})
+    raw_datasets = raw_datasets.map(apply_chat_template, fn_kwargs={"tokenizer": tokenizer, "task": "pretrain"})
     train_dataset = raw_datasets["train"]
     eval_dataset = raw_datasets["test"]
 
