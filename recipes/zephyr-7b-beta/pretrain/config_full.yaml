@@ -8,17 +8,16 @@ use_flash_attention_2: true
 dataset_mixer:
   cmcmaster/rheumatology_documents: 1.0
 dataset_splits:
-- train_sft
-- test_sft
+- train
 preprocessing_num_workers: 12
 
 # SFT trainer config
 bf16: true
-do_eval: true
+do_eval: false
 evaluation_strategy: epoch
 gradient_accumulation_steps: 2
 gradient_checkpointing: true
-hub_model_id: zephyr-7b-sft-full
+hub_model_id: mistral-7b-rheum-finetune
 hub_strategy: every_save
 learning_rate: 2.0e-05
 log_level: info
@@ -28,14 +27,14 @@ lr_scheduler_type: cosine
 max_seq_length: 2048
 max_steps: -1
 num_train_epochs: 1
-output_dir: data/zephyr-7b-sft-full
+output_dir: data/mistral-7b-rheum-finetune
 overwrite_output_dir: true
-per_device_eval_batch_size: 16
-per_device_train_batch_size: 32
+per_device_eval_batch_size: 1
+per_device_train_batch_size: 1
 push_to_hub: true
 remove_unused_columns: true
 report_to:
-- tensorboard
+- wandb
 save_strategy: "no"
 save_total_limit: null
 seed: 42

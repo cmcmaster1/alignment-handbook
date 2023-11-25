@@ -82,10 +82,7 @@ def main():
     ###############
     # Load datasets
     ###############
-    train_dataset = Datasets.load_dataset(data_args.dataset_mixer[0].key())
-    logger.info(
-        f"Training on the following datasets and their proportions: {[split + ' : ' + str(dset.num_rows) for split, dset in raw_datasets.items()]}"
-    )
+    raw_datasets = get_datasets(data_args, splits=data_args.dataset_splits)
 
     ################
     # Load tokenizer
@@ -118,7 +115,7 @@ def main():
         model=model_args.model_name_or_path,
         model_init_kwargs=model_kwargs,
         args=training_args,
-        train_dataset=train_dataset,
+        train_dataset=raw_datasets["train"],
         dataset_text_field="text",
         max_seq_length=training_args.max_seq_length,
         tokenizer=tokenizer,

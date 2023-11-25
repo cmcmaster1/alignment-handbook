@@ -178,7 +178,7 @@ def mix_datasets(dataset_mixer: dict, splits: Optional[List[str]] = None, shuffl
         else:
             raw_datasets["train"] = concatenate_datasets(train_subsets)
     # No subsampling for test datasets to enable fair comparison across models
-    if len(raw_val_datasets) > 0:
+    if raw_val_datasets and len(raw_val_datasets) > 0:
         if shuffle:
             raw_datasets["test"] = concatenate_datasets(raw_val_datasets).shuffle(seed=42)
         else:
