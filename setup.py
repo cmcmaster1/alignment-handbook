@@ -41,13 +41,13 @@ if stale_egg_info.exists():
 # IMPORTANT: all dependencies should be listed here with their version requirements, if any.
 #   * If a dependency is fast-moving (e.g. transformers), pin to the exact version
 _deps = [
-    "accelerate==0.23.0",
-    "bitsandbytes==0.41.2.post2",
+    "accelerate>=0.23.0",
+    "bitsandbytes>=0.41.2.post2",
     "black==23.1.0",
-    "datasets==2.14.6",
+    "datasets>=2.14.6",
     "deepspeed==0.12.2",
     "einops>=0.6.1",
-    "evaluate==0.4.0",
+    "evaluate>=0.4.0",
     "flake8>=6.0.0",
     "hf-doc-builder>=0.4.0",
     "huggingface-hub>=0.14.1,<1.0",
@@ -56,15 +56,15 @@ _deps = [
     "numpy>=1.24.2",
     "packaging>=23.0",
     "parameterized>=0.9.0",
-    "peft==0.6.1",
+    "peft>=0.6.1",
     "protobuf<=3.20.2",  # Needed to avoid conflicts with `transformers`
     "pytest",
     "safetensors>=0.3.3",
     "scipy",
     "tensorboard",
-    "torch==2.1.0",
-    "transformers==4.35.0",
-    "trl==0.7.4",
+    "torch>=2.1.0",
+    "transformers>=4.35.0",
+    "trl>=0.7.4",
     "jinja2>=3.0.0",
     "tqdm>=4.64.1",
 ]
