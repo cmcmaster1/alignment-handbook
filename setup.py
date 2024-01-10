@@ -50,21 +50,22 @@ _deps = [
     "evaluate>=0.4.0",
     "flake8>=6.0.0",
     "hf-doc-builder>=0.4.0",
+    "hf_transfer>=0.1.4",
     "huggingface-hub>=0.14.1,<1.0",
     "isort>=5.12.0",
     "ninja>=1.11.1",
     "numpy>=1.24.2",
     "packaging>=23.0",
     "parameterized>=0.9.0",
-    "peft>=0.6.1",
+    "peft==0.7.1",
     "protobuf<=3.20.2",  # Needed to avoid conflicts with `transformers`
     "pytest",
     "safetensors>=0.3.3",
     "scipy",
     "tensorboard",
-    "torch>=2.1.0",
-    "transformers>=4.35.0",
-    "trl>=0.7.4",
+    "torch>=2.1.2",
+    "transformers>=4.36.2",
+    "trl>=0.7.7",
     "jinja2>=3.0.0",
     "tqdm>=4.64.1",
 ]
@@ -114,7 +115,7 @@ install_requires = [
 
 setup(
     name="alignment-handbook",
-    version="0.2.0.dev0",  # expected format is one of x.y.z.dev0, or x.y.z.rc1 or x.y.z (no to dashes, yes to dots)
+    version="0.3.0.dev0",  # expected format is one of x.y.z.dev0, or x.y.z.rc1 or x.y.z (no to dashes, yes to dots)
     author="The Hugging Face team (past and future)",
     author_email="lewis@huggingface.co",
     description="The Alignment Handbook",
